@@ -40,7 +40,11 @@ password : {type: 'password'} ,
     const {role , ...userData} = resData.user
     //  عشان لما يرجع يرجع ال 3 مع بعض (...)
     //  ده الاوبجيكت الي بيرجع من اللوجين الصح
-    return {...userData , id: x.id , userTKN: resData.token}
+    return { 
+  ...userData, 
+  id: (x as any).id, 
+  userTKN: (res as any).token 
+}
   } 
 return null
 

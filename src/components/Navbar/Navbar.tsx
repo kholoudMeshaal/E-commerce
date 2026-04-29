@@ -116,7 +116,7 @@ const pathname = usePathname()
 
   {/* Logo & Welcome - وضعناهم في flex-col ليظهر الاسم تحت اللوجو */}
   <Link href="/" className="shrink-0 flex flex-col items-start">
-    <Image src={logo} alt="FreshCart Logo" className="h-9 w-auto" />
+    <Image priority src={logo} alt="FreshCart Logo" className="h-9 w-auto" />
     {data?.user?.name && (
       <span className="hidden md:block text-green-600 text-[10px] font-bold capitalize mt-1 leading-none">
         Welcome, {data.user.name.split(' ')[0]}
