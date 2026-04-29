@@ -120,7 +120,7 @@ callbacks: {
       const resData = await response.json()
 
       if (resData.token) {
-        const decoded = jwtDecode(resData.token)
+   const decoded = jwtDecode(resData.token) as any;
         token.credentialToken = resData.token
         token.userId = decoded.id
       }
