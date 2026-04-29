@@ -43,7 +43,7 @@ password : {type: 'password'} ,
     return { 
   ...userData, 
   id: (x as any).id, 
-  userTKN: (res as any).token 
+  userTKN: (resData as any).token 
 }
   } 
 return null
