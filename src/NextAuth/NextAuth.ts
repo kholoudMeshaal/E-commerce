@@ -40,7 +40,8 @@ password : {type: 'password'} ,
     const {role , ...userData} = resData.user
     //  عشان لما يرجع يرجع ال 3 مع بعض (...)
     //  ده الاوبجيكت الي بيرجع من اللوجين الصح
-    return {...userData , id: x.id , userTKN: resData.token}
+    // نقوم بإخبار TypeScript أن الكائن x يحتوي على id من نوع string
+return { ...userData, id: (x as any).id, userTKN: (resData as any).token }
   } 
 return null
 
