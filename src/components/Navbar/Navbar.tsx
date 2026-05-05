@@ -41,9 +41,16 @@ export default function Navbar() {
       setCartCount(0)
   }
 
-  React.useEffect(() => {
-    getUserCart().then(({ numOfCartItems }) => setCartCount(numOfCartItems))
-  }, [])
+React.useEffect(() => {
+  if (!data) return  
+  getUserCart()
+    .then(({ numOfCartItems }) => {
+      if (numOfCartItems !== undefined) {
+        setCartCount(numOfCartItems)
+      }
+    })
+    .catch(() => setCartCount(0))
+}, [data])  
 
 const pathname = usePathname()
 
