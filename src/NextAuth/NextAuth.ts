@@ -149,7 +149,7 @@ import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 
-// 1. حل مشكلة الـ Types ليتعرف NextAuth على الحقول الجديدة
+
 declare module "next-auth" {
   interface Session {
     user: {
@@ -160,7 +160,7 @@ declare module "next-auth" {
     };
   }
   interface User {
-    userTKN?: string; // التوكن القادم من الـ API الخاص بك
+    userTKN?: string; 
     id: string;
   }
 }
@@ -219,7 +219,7 @@ export const nextAuthConfig: NextAuthOptions = {
 
   callbacks: {
     jwt: async function ({ user, token, account }) {
-      // تسجيل الدخول الاجتماعي (Google/Facebook)
+
       if (account?.provider === "google" || account?.provider === "facebook") {
         try {
           const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/auth/social-signin`, {
@@ -246,7 +246,7 @@ export const nextAuthConfig: NextAuthOptions = {
       }
 
       // تسجيل الدخول العادي (Credentials)
-      // ملاحظة: الـ user يكون متاحاً فقط في أول مرة يتم فيها تسجيل الدخول
+  // بيكون اول لما يعمل لوج ان
       if (user) {
         token.credentialToken = user.userTKN;
         token.userId = user.id;
@@ -263,6 +263,6 @@ export const nextAuthConfig: NextAuthOptions = {
     }
   },
   
-  // ضروري جداً لعمل الـ Production
+// بروداكشن
   secret: process.env.NEXTAUTH_SECRET, 
 };

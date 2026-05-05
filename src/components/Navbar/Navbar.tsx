@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
 import logo from "@images/icon.svg"
 import { signOut, useSession } from "next-auth/react"
 import { usePathname, useRouter } from "next/navigation"
-import { CartCreatedContext } from "@/Context/CartContext/CartContext"
+import { CartCreatedContext, useCart } from "@/Context/CartContext/CartContext"
 import { getUserCart } from "../AddToCart/AddToCart.action"
 
 const navLinks = [
@@ -30,7 +30,8 @@ const categories = [
 
 export default function Navbar() {
   const { data } = useSession()
-  const { cartCount, setCartCount } = React.useContext(CartCreatedContext)
+  // const { cartCount, setCartCount } = React.useContext(CartCreatedContext)
+  const { cartCount, setCartCount } = useCart()
   const router = useRouter()
   const [drawerOpen, setDrawerOpen] = React.useState(false)
 

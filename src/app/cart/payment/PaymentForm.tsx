@@ -8,8 +8,8 @@ import { ShippingAddressType, UserShippingAddress } from './payment.interface'
 import { handelCashOrder, handelOnlineOrder } from './payment.action'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
-import React from 'react'
-import { CartCreatedContext } from '@/Context/CartContext/CartContext'
+
+import { useCart } from '@/Context/CartContext/CartContext'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
@@ -22,7 +22,8 @@ const paymentSchema = z.object({
 
 export default function PaymentForm({ cartId }: { cartId: string }) {
 
-  const { setCartCount } = React.useContext(CartCreatedContext)
+  // const { setCartCount } = React.useContext(CartCreatedContext)
+  const { setCartCount } = useCart()
   const router = useRouter()
 
   const { handleSubmit, control, formState: { isSubmitting } } = useForm({

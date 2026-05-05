@@ -1,7 +1,6 @@
 
 
-import { Heart, RefreshCw, Eye, Plus, Star } from 'lucide-react'
-import { AllProductData } from '@/app/home.interface'
+import {  Eye, Star } from 'lucide-react'
 import { Card, CardDescription, CardTitle } from '../ui/card'
 import Image from 'next/image'
 import Link from 'next/link';
@@ -69,26 +68,6 @@ export default function ProductCart({ prod, isFavPage }: { prod: any, isFavPage?
 
          </div>
           </div>
-
-
-
-        {/* <div className="flex items-center gap-1.5 mb-3">
-          <div className="flex items-center gap-0.5">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <Star
-                key={star}
-                className={`h-3.5 w-3.5 ${
-                  star <= Math.round(ratingsAverage)
-                    ? 'fill-yellow-400 text-yellow-400'
-                    : 'fill-gray-200 text-gray-200'
-                }`}
-              />
-            ))}
-          </div>
-          <span className="text-xs text-gray-500">
-            {ratingsAverage} ({ratingsQuantity})
-          </span>
-        </div> */}
 
         {/* السعر   */}
 

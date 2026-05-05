@@ -9,6 +9,12 @@ const links = {
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
 };
 
+const contactInfo = [
+  { Icon: Phone, text: "+1 (800) 123-4567" },
+  { Icon: Mail, text: "support@freshcart.com" },
+  { Icon: MapPin, text: "123 Commerce Street, New York, NY 10001" },
+];
+
 const socials = [FaFacebookF, FaTwitter, FaInstagram, FaYoutube];
 
 export default function Footer() {
@@ -29,11 +35,7 @@ export default function Footer() {
           </p>
 
           <ul className="space-y-2">
-            {[
-              [Phone, "+1 (800) 123-4567"],
-              [Mail, "support@freshcart.com"],
-              [MapPin, "123 Commerce Street, New York, NY 10001"],
-            ].map(([Icon, text], i) => (
+            {contactInfo.map(({ Icon, text }, i) => (
               <li key={i} className="flex items-center gap-2">
                 <Icon className="text-green-500 w-4 h-4 shrink-0" />
                 {text}
@@ -66,17 +68,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-        <div className="border-t border-white/10">
-<div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-2">
           <p className="text-xs text-gray-500">© 2026 FreshCart. All rights reserved.</p>
-          
           <div className="flex items-center gap-2 opacity-50">
-             <span className="border border-gray-700 rounded px-2 py-1 text-[9px] font-bold">VISA</span>
-             <span className="border border-gray-700 rounded px-2 py-1 text-[9px] font-bold">MASTERCARD</span>
-             <span className="border border-gray-700 rounded px-2 py-1 text-[9px] font-bold">PAYPAL</span>
+            <span className="border border-gray-700 rounded px-2 py-1 text-[9px] font-bold">VISA</span>
+            <span className="border border-gray-700 rounded px-2 py-1 text-[9px] font-bold">MASTERCARD</span>
+            <span className="border border-gray-700 rounded px-2 py-1 text-[9px] font-bold">PAYPAL</span>
           </div>
-          </div>
-          </div>
+        </div>
+      </div>
     </footer>
   );
 }

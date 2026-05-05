@@ -8,7 +8,7 @@ import { count } from "console";
 const counterSlice = createSlice({
   name: 'counterSlice',
   initialState: { count: 0 },
-  reducers: {}  // ← أضيفي دي
+  reducers: {}  
 })
 
 

@@ -4,17 +4,16 @@ import { Plus } from "lucide-react"
 import AppButton from "../shared/AppButton/AppButton"
 import { handelAddProductToCart } from "./AddToCart.action"
 import { toast } from "sonner"
-import { useContext } from "react"
-import { CartCreatedContext } from "@/Context/CartContext/CartContext"
+import { useCart } from "@/Context/CartContext/CartContext"
 
 export default function AddToCart({id} : {id:string}) {
  
- const {setCartCount} = useContext(CartCreatedContext)
+const { cartCount, setCartCount } = useCart()
  
     async function addProductToCart(){
 toast.promise(handelAddProductToCart({productId: id}) , {
     loading: 'Add To Cart ....' , 
-    success: function({status , message , numOfCartItems , cardId ,products , totalCartPrice}){
+    success: function({status , message , numOfCartItems ,products , totalCartPrice}){
        setCartCount(numOfCartItems)
         return message
     } , 

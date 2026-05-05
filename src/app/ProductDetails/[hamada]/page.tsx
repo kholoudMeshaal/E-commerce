@@ -11,9 +11,9 @@ export default async function page({ params }: { params: Promise<{ hamada: strin
 
   const rating = ratingsAverage ?? 0
   const reviewsCount = ratingsQuantity ?? 0
-  const hasDiscount = priceAfterDiscount > 0
+const hasDiscount = (priceAfterDiscount ?? 0) > 0
   const finalPrice = hasDiscount ? priceAfterDiscount : price
-  const discountPercent = hasDiscount ? Math.round(((price - priceAfterDiscount) / price) * 100) : 0
+const discountPercent = hasDiscount ? Math.round(((price - (priceAfterDiscount ?? 0)) / price) * 100) : 0
 
   return (
     <div className="container mx-auto px-4 py-6">
