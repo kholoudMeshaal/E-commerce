@@ -26,7 +26,7 @@ export default function ProductCart({ prod, isFavPage }: { prod: any, isFavPage?
 
 
       
-  <div className="absolute right-3 top-3 z-10 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0">
+<div className="absolute right-3 top-3 z-10 flex flex-col gap-2 md:opacity-0 md:group-hover:opacity-100 md:transition-all md:duration-300 md:translate-x-4 md:group-hover:translate-x-0">
    <WishlistButton productId={prod._id} initialFavorite={isFavPage} />
 
 <Link href={`/ProductDetails/${_id}`}>
