@@ -22,7 +22,7 @@
 // export default async function SearchResultsPage({ searchParams }: Props) {
 //   const { q } = await searchParams
 //   const response = await getAllProduct()
-//   const productList: Product[] = response?.data || []
+//   const productList: Product[] = response || []
 
 //   const filteredProducts = productList.filter((prod: Product) =>
 //     prod.title.toLowerCase().includes(q?.toLowerCase() || "")
